@@ -1,4 +1,7 @@
 module.exports = {
+    AuthController: require('./authController'),
+    AdminController: require('./adminController'),
+    UserController: require('./userController'),
     ArtikelController: require('./artikelController'),
-    AuthController: require('./authController')
+    WebinarController: require('./webinarController')
 }
