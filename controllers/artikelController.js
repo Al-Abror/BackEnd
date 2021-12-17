@@ -1,14 +1,15 @@
-const { Artikel } = require('../models')
+const Artikel = require('../models')
 
 class ArtikelController {
 
   static async getArtikel(req, res) {
     try {
-      const artikelData = await Artikel.findAll()
-      return res.status(200).json(artikelData)
+      const artikelData = await Artikel.findAll({raw : true})
+      res.status(200).json(artikelData)
     } catch (error) {
       res.status(500).json({msg : "internal server error"})
     }
+    // res.json(Artikel)
   }
 
   static async getArtikelById(req, res) {
@@ -16,7 +17,8 @@ class ArtikelController {
       const artikelData = await Artikel.findOne({
         where: {
           id: req.params.id
-        }
+        },
+        raw: true
       }).then(result => {
         res.status(200).json(artikelData)
       })
