@@ -1,11 +1,7 @@
 const mongoose = require("mongoose")
 
-const katagoriSchema = new mongoose.Schema({
+const kategoriSchema = new mongoose.Schema({
     judul: {
-        type: String,
-        required: true
-    },
-    nama_problem: {
         type: String,
         required: true
     },
@@ -18,5 +14,5 @@ const katagoriSchema = new mongoose.Schema({
     }
 })
 
-const KatagoriModel = mongoose.model('Katagori', katagoriSchema)
-module.exports = KatagoriModel
+const KategoriModel = mongoose.model('Kategori', kategoriSchema)
+module.exports = KategoriModel
