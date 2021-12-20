@@ -20,7 +20,9 @@
   "homepage": "https://github.com/Al-Abror/BackEnd#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.2"
   },
   "devDependencies": {
