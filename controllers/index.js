@@ -1,7 +1,13 @@
 module.exports = {
-    AuthController: require('./authController'),
-    AdminController: require('./adminController'),
-    UserController: require('./userController'),
-    ArtikelController: require('./artikelController'),
-    WebinarController: require('./webinarController')
-}
+    AdminController: require('./admin.controller'),
+    ArtikelController: require('./artikel.controller'),
+    AuthController: require('./auth.controller'),
+    KategoriController : require('./kategori.controller'),
+    KomunitasController : require('./komunitas.controller'),
+    KontakController : require('./kontak.controller'),
+    PsikologController : require('./psikolog.controller'),
+    TestiController : require('./testi.controller'),
+    TimController : require('./tim.controller'),
+    UserController: require('./user.controller'),
+    WebinarController: require('./webinar.controller'),
+} 

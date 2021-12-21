@@ -1,6 +1,7 @@
 const accessTokenSecret = 'youraccesstokensecret';
 const { User } = require('../models')
 const jwt = require("jsonwebtoken")
+const bcrypt = require("bcrypt")
 
 class AuthController {
   static async authenticationJWT(req, res, next) {
@@ -21,14 +22,24 @@ class AuthController {
   
   static async loginUser(req, res) {
     try {
-      const {email, password} = await req.body;
-      const user = User.find(u => u.email === email && u.password === password)
-      if(user){
-        const token = jwt.sign({email: user.email, role: user.role}, accessTokenSecret)
-        res.json({token})
-      } else {
-        res.send("Username or password incorrect")
-      }     
+      // search user
+      User.findOne({ email: req.body.email }).then(
+        (user) => {      
+          if (!user) {
+            return res.status(401).json({
+              error: 'User not found!'
+            });
+          }
+          else if (req.body.password !== user.password) {
+            return res.status(401).json({
+              error: 'Incorrect password!'
+            });
+          }
+          const token = jwt.sign({email: user.email, role: user.role}, accessTokenSecret)
+          res.status(200).json({
+            token: token
+          });
+        })            
     } catch (error) {
       res.status(500).json({msg : "internal server error"})
     }
