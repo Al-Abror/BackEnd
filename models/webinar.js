@@ -1,5 +1,8 @@
 const mongoose = require("mongoose")
 
+const timestamps = {
+    timestamps : true
+}
 const webinarSchema = new mongoose.Schema({
     judul: {
         type: String,
@@ -13,7 +16,7 @@ const webinarSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-});
+}, timestamps);
 
 
 const webinarModel = mongoose.model("Webinar", webinarSchema)

@@ -1,5 +1,8 @@
 const mongoose = require("mongoose")
 
+const timestamps = {
+    timestamps : true
+}
 const testimoniSchema = new mongoose.Schema({
     judul: {
         type: String,
@@ -17,7 +20,7 @@ const testimoniSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-});
+}, timestamps);
 
 
 const testimoniModel = mongoose.model("Testimoni", testimoniSchema)

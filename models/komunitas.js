@@ -1,5 +1,8 @@
 const mongoose = require("mongoose")
 
+const timestamps = {
+    timestamps : true
+}
 const komunitasSchema = new mongoose.Schema({
     judul: {
         type: String,
@@ -25,7 +28,7 @@ const komunitasSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-});
+}, timestamps);
 
 
 const komunitasModel = mongoose.model("Komunitas", komunitasSchema)

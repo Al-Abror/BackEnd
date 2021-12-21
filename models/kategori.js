@@ -1,5 +1,8 @@
 const mongoose = require("mongoose")
 
+const timestamps = {
+    timestamps : true
+}
 const kategoriSchema = new mongoose.Schema({
     judul: {
         type: String,
@@ -12,7 +15,7 @@ const kategoriSchema = new mongoose.Schema({
     gambar: {
         type: String
     }
-})
+}, timestamps)
 
 const KategoriModel = mongoose.model('Kategori', kategoriSchema)
 module.exports = KategoriModel

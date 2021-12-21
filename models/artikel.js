@@ -1,5 +1,8 @@
 const mongoose = require("mongoose")
 
+const timestamps = {
+    timestamps : true
+}
 const artikelSchema = new mongoose.Schema({
     judul: {
         type: String,
@@ -13,7 +16,7 @@ const artikelSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-});
+}, timestamps);
 
 
 const artikelModel = mongoose.model("Artikel", artikelSchema)
