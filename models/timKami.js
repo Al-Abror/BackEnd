@@ -1,5 +1,8 @@
 const mongoose = require("mongoose")
 
+const timestamps = {
+    timestamps : true
+}
 const timkamiSchema = new mongoose.Schema({
     nama: {
         type: String,
@@ -17,7 +20,7 @@ const timkamiSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-});
+}, timestamps);
 
 
 const timkamiModel = mongoose.model("timkami", timkamiSchema)

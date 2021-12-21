@@ -1,6 +1,9 @@
 const mongoose = require("mongoose")
 
-const artikelSchema = new mongoose.Schema({
+const timestamps = {
+    timestamps : true
+}
+const webinarSchema = new mongoose.Schema({
     judul: {
         type: String,
         required: true,
@@ -13,8 +16,8 @@ const artikelSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-});
+}, timestamps);
 
 
-const artikelModel = mongoose.model("Artikel", artikelSchema)
-module.exports = artikelModel
+const webinarModel = mongoose.model("Webinar", webinarSchema)
+module.exports = webinarModel

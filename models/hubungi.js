@@ -1,5 +1,8 @@
 const mongoose = require("mongoose")
 
+const timestamps = {
+    timestamps : true
+}
 const hubungiSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -8,27 +11,8 @@ const hubungiSchema = new mongoose.Schema({
     keluhan: {
         type: String,
         required: true
-    },
-    deskripsi: {
-        type: String,
-        required: true
-    },
-    nama_kantor: {
-        type: String
-    },
-    email_kantor: {
-        type: String
-    },
-    no_hp: {
-        type: Number
-    },
-    alamat: {
-        type: String
-    },
-    nama_web: {
-        type: String
     }
-})
+}, timestamps)
 
 const HubungiModel = mongoose.model('Hubungi', hubungiSchema)
 module.exports = HubungiModel

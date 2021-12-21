@@ -1,5 +1,8 @@
 const mongoose = require("mongoose")
 
+const timestamps = {
+    timestamps : true
+}
 const psikologSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -25,7 +28,7 @@ const psikologSchema = new mongoose.Schema({
     gambar: {
         type: String
     }
-})
+}, timestamps)
 
 const PsikologModel = mongoose.model('Psikolog', psikologSchema)
 module.exports = PsikologModel

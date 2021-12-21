@@ -3,23 +3,19 @@ const mongoose = require("mongoose")
 const timestamps = {
     timestamps : true
 }
-const adminSchema = new mongoose.Schema({
-    name: {
+const kategoriSchema = new mongoose.Schema({
+    judul: {
         type: String,
         required: true
     },
-    email: {
+    deskripsi: {
         type: String,
         required: true
     },
-    password: {
-        type: String,
-        required: true
-    },
-    role: {
+    gambar: {
         type: String
     }
 }, timestamps)
 
-const AdminModel = mongoose.model('Admin', adminSchema)
-module.exports = AdminModel
+const KategoriModel = mongoose.model('Kategori', kategoriSchema)
+module.exports = KategoriModel
