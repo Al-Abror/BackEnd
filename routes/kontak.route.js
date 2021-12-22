@@ -1,8 +1,11 @@
 const router = require('express').Router()
 const { KontakController, AuthController } = require('../Controllers')
 
-router.get('/', AuthController.authenticationJWT, KontakController.getMessage)
+// user only
 router.post('/send-message', AuthController.authenticationJWT, KontakController.postMessage)
-router.get('/:id', KontakController.getMessageById)
+
+// admin only
+router.get('/:id', AuthController.authenticationJWT, KontakController.getMessageById)
+router.get('/', AuthController.authenticationJWT, KontakController.getMessage)
 
 module.exports = router
