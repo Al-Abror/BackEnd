@@ -8,25 +8,21 @@ const psikologSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    email: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
     spesialis: {
-        type: String
+        type: String,
+        required : true
     },
     deskripsi: {
-        type: String
+        type: String,
+        required : true
     },
     testimoni: {
-        type: String
+        type: String,
+        required : true
     },
     gambar: {
-        type: String
+        type: String,
+        required : true
     }
 }, timestamps)
 
