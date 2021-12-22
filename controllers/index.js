@@ -6,7 +6,7 @@ module.exports = {
     KomunitasController : require('./komunitas.controller'),
     KontakController : require('./kontak.controller'),
     PsikologController : require('./psikolog.controller'),
-    TestiController : require('./testi.controller'),
+    TestimoniController : require('./testi.controller'),
     TimController : require('./tim.controller'),
     UserController: require('./user.controller'),
     WebinarController: require('./webinar.controller'),

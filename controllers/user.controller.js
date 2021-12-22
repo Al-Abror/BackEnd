@@ -25,7 +25,7 @@ class UserController {
           const opt = {
             new : true
           }
-          await User.findOneAndUpdate(req.params.id, req.body, opt)
+          await User.findOneAndUpdate({_id : req.params.id}, req.body, opt)
           res.status(201).json({
             message : "user updated"
           })
