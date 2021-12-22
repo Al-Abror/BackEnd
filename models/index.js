@@ -1,7 +1,7 @@
 module.exports = {
     Admin : require('./admin'),
     Artikel : require('./artikel'),
-    Kontak : require('./hubungi'),
+    Message : require('./hubungi'),
     Kategori : require('./kategori'),
     Komunitas : require('./komunitas'),
     Psikolog : require('./psikolog'),
