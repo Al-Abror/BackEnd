@@ -10,11 +10,8 @@ const timRouter = require('./tim.route')
 const userRouter = require('./user.route')
 const webinarRouter = require('./webinar.route')
 
-router.get("/ping", (req, res) => {
-    const ready = {
-        status: "server is ready"
-    }
-    res.status(200).send(ready)
+router.get("/", (req, res) => {
+    res.status(200).send('Hello, welcome to cure.it API')
 })
 
 router.use('/artikel', artikelRouter)

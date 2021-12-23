@@ -18,7 +18,7 @@ class TimController {
         if(!tim) {
           res.sendStatus(404)
         }
-        res.status(200).json(timData)
+        res.status(200).json(tim)
       })
     } catch (error) {
       res.status(500).json({msg : "internal server error"})

@@ -30,15 +30,19 @@ class AuthController {
               error: 'User not found!'
             });
           }
-          else if (req.body.password !== user.password) {
-            return res.status(401).json({
-              error: 'Incorrect password!'
-            });
-          }
-          const token = jwt.sign({email: user.email, role: user.role}, accessTokenSecret)
-          res.status(200).json({
-            token: token
-          });
+          bcrypt.compare(req.body.password, user.password).then(
+            (valid) => {
+              if(!valid) {
+                return res.status(401).json({
+                  error: 'Incorrect password!'
+                });
+              }
+              const token = jwt.sign({email: user.email, role: user.role}, accessTokenSecret)
+              res.status(200).json({
+                token: token
+              });
+            }
+          )   
         })            
     } catch (error) {
       res.status(500).json({msg : "internal server error"})

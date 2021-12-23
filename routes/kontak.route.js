@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { KontakController, AuthController } = require('../Controllers')
+const { KontakController, AuthController } = require('../controllers')
 
 // user only
 router.post('/send-message', AuthController.authenticationJWT, KontakController.postMessage)

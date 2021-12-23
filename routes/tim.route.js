@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { TimController, AuthController } = require('../Controllers')
+const { TimController, AuthController } = require('../controllers')
 
 // admin only
 router.patch('/edit-tim/:id', AuthController.authenticationJWT, TimController.updateTim)
