@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { TestimoniController, AuthController } = require('../Controllers')
+const { TestimoniController, AuthController } = require('../controllers')
 
 // admin only
 router.patch('/edit-testimoni/:id', AuthController.authenticationJWT, TestimoniController.updateTestimoni)

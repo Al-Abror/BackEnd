@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { WebinarController, AuthController } = require('../Controllers')
+const { WebinarController, AuthController } = require('../controllers')
 
 // admin only
 router.delete('/delete-webinar/:id', AuthController.authenticationJWT, WebinarController.deleteWebinar)

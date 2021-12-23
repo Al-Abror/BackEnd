@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { PsikologController, AuthController } = require('../Controllers')
+const { PsikologController, AuthController } = require('../controllers')
 
 // admin only
 router.patch('/edit-psikolog/:id', AuthController.authenticationJWT, PsikologController.updatePsikolog)
