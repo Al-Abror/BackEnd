@@ -8,10 +8,10 @@ const openDBConnection = require("./helper/db")
 
 // inisialisasi server
 const port = process.env.PORT || 3000
-const uri = process.env.MONGO_URI
+const uri = process.env.MONGODB_URI
 const options = {
-  user : process.env.MONGO_USER,
-  pass : process.env.MONGO_PASS
+  user : process.env.MONGODB_USER,
+  pass : process.env.MONGODB_PASS
 }
 
 // function
