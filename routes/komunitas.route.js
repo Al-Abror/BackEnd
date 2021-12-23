@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { KomunitasController, AuthController } = require('../Controllers')
+const { KomunitasController, AuthController } = require('../controllers')
 
 // admin only
 router.patch('/edit-komunitas/:id', AuthController.authenticationJWT, KomunitasController.updateKomunitas)

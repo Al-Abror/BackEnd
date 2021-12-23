@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { AdminController, AuthController } = require('../Controllers')
+const { AdminController, AuthController } = require('../controllers')
 
 // admin only
 router.post('/add-users', AuthController.authenticationJWT, AdminController.addUser)
