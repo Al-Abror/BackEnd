@@ -8,7 +8,7 @@ const openDBConnection = require("./helper/db")
 
 // inisialisasi server
 const port = process.env.PORT || 3000
-const uri = process.env.MONGODB_URI
+const uri = "mongodb+srv://admin2:admin2@cluster0.iwjbo.mongodb.net/myFirstDatabase"
 const options = {
   user : process.env.MONGODB_USER,
   pass : process.env.MONGODB_PASS
