@@ -18,7 +18,7 @@ class KategoriController {
         if(!kategori) {
           res.sendStatus(404)
         }
-        res.status(200).json(kategoriData)
+        res.status(200).json(kategori)
       })
     } catch (error) {
       res.status(500).json({msg : "internal server error"})

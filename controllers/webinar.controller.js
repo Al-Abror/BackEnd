@@ -18,7 +18,7 @@ class WebinarController {
         if(!webinar) {
           res.sendStatus(404)
         }
-        res.status(200).json(webinarData)
+        res.status(200).json(webinar)
       })
     } catch (error) {
       res.status(500).json({msg : "internal server error"})

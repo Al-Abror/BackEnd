@@ -18,7 +18,7 @@ class PsikologController {
         if(!psikolog) {
           res.sendStatus(404)
         }
-        res.status(200).json(psikologData)
+        res.status(200).json(psikolog)
       })
     } catch (error) {
       res.status(500).json({msg : "internal server error"})

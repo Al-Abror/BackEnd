@@ -1,4 +1,6 @@
 const { User } = require('../models')
+const bcrypt = require('bcrypt')
+const salt = bcrypt.genSaltSync(10);
 
 class AdminController {
 
@@ -53,8 +55,16 @@ class AdminController {
           res.sendStatus(403);
           break;
         case 'admin':
-          const userData = await req.body;
-          const newUser = new User(userData)
+          const {name, email, password, gender, no_hp, role} = await req.body;
+          const hashpw = bcrypt.hashSync(password, salt)
+          const newUser = new User({
+            name: name,
+            email: email,
+            password : hashpw,
+            gender: gender,
+            no_hp: no_hp,
+            role : role
+          })
           await newUser.save()
           .then(result => {
             res.status(201).json({
@@ -82,7 +92,17 @@ class AdminController {
           const opt = {
             new : true
           }
-          await User.findOneAndUpdate({_id : req.params.id}, req.body, opt)
+          const {name, email, password, gender, no_hp, role} = await req.body;
+          const hashpw = bcrypt.hashSync(password, salt)
+          const newUser = {
+            name: name,
+            email: email,
+            password : hashpw,
+            gender: gender,
+            no_hp: no_hp,
+            role : role
+          }
+          await User.findOneAndUpdate({_id : req.params.id}, newUser, opt)
           .then(user => {
             if (!user) {
               res.sendStatus(404)

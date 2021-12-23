@@ -18,9 +18,10 @@ class ArtikelController {
         if(!artikel) {
           res.sendStatus(404)
         }
-        res.status(200).json(artikelData)
+        res.status(200).json(artikel)
       })
     } catch (error) {
+      console.log(error);
       res.status(500).json({msg : "internal server error"})
     }
   }
