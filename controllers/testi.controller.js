@@ -18,7 +18,7 @@ class TestimoniController {
         if(!testimoni) {
           res.sendStatus(404)
         }
-        res.status(200).json(testimoniData)
+        res.status(200).json(testimoni)
       })
     } catch (error) {
       res.status(500).json({msg : "internal server error"})

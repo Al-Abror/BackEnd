@@ -18,7 +18,7 @@ class KomunitasController {
         if(!komunitas) {
           res.sendStatus(404)
         }
-        res.status(200).json(komunitasData)
+        res.status(200).json(komunitas)
       })
     } catch (error) {
       res.status(500).json({msg : "internal server error"})
