@@ -40,6 +40,7 @@ const userSchema = new mongoose.Schema({
     },
     role : {
         type: String,
+        enum: ['admin', 'user'],
         lowercase : true,
         required: true
     }
@@ -47,14 +48,4 @@ const userSchema = new mongoose.Schema({
 
 const UserModel = mongoose.model('User', userSchema)
 
-// // untuk create admin nyalakan ini, matikan yg line 34
-// const User = mongoose.model('User', userSchema)
-// const UserModel = User.create({
-//         name : 'admin',
-//         email : 'admin@mail.com',
-//         password : 'Admin123#',
-//         gender : 'Male',
-//         no_hp : 0987654321,
-//         role : 'admin'
-//     })
 module.exports = UserModel
