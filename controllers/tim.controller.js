@@ -88,7 +88,7 @@ class TimController {
           res.sendStatus(403);
           break;
         case 'admin':
-          const tim = Tim.findOneAndDelete(req.params.id)
+          const tim = Tim.findOneAndDelete({_id : req.params.id})
           .then(result => {
             if (!tim) {
               res.status(404).json({

@@ -89,7 +89,7 @@ class ArtikelController {
           res.sendStatus(403);
           break;
         case 'admin':
-          const artikel = Artikel.findOneAndDelete(req.params.id)
+          const artikel = Artikel.findOneAndDelete({_id: req.params.id})
           .then(result => {
             if (!artikel) {
               res.status(404).json({

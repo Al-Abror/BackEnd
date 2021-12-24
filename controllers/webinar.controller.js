@@ -88,7 +88,7 @@ class WebinarController {
           res.sendStatus(403);
           break;
         case 'admin':
-          const webinar = Webinar.findOneAndDelete(req.params.id)
+          const webinar = Webinar.findOneAndDelete({_id : req.params.id})
           .then(result => {
             if (!webinar) {
               res.status(404).json({

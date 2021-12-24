@@ -88,7 +88,7 @@ class KategoriController {
           res.sendStatus(403);
           break;
         case 'admin':
-          const kategori = Kategori.findOneAndDelete(req.params.id)
+          const kategori = Kategori.findOneAndDelete({_id : req.params.id})
           .then(result => {
             if (!kategori) {
               res.status(404).json({
