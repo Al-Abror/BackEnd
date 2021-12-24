@@ -88,7 +88,7 @@ class KomunitasController {
           res.sendStatus(403);
           break;
         case 'admin':
-          const komunitas = Komunitas.findOneAndDelete(req.params.id)
+          const komunitas = Komunitas.findOneAndDelete({_id : req.params.id})
           .then(result => {
             if (!komunitas) {
               res.status(404).json({

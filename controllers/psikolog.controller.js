@@ -88,7 +88,7 @@ class PsikologController {
           res.sendStatus(403);
           break;
         case 'admin':
-          const psikolog = Psikolog.findOneAndDelete(req.params.id)
+          const psikolog = Psikolog.findOneAndDelete({_id : req.params.id})
           .then(result => {
             if (!psikolog) {
               res.status(404).json({
